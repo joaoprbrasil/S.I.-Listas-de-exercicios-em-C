@@ -1,1 +1,1 @@
-# S.I.-Listas-de-exerc-cios
+# S.I.-Listas-de-exercicios
