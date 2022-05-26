@@ -15,7 +15,7 @@ setlocale(LC_ALL, "Portuguese");
 
     printf("Digite a nota dos 10 alunos na primeira prova: ");
         for(j=0; j<10; j++){
-            scanf("%f", &mtz[i][j]);                            //Contador das 10 notas na primeira prova
+            scanf("%f", &mtz[i][j]);                            //Leitor das 10 notas na primeira prova
                 if(j==0){
                     pioraluno[0]=1;
                     piornota[0]=mtz[i][j];
@@ -29,7 +29,7 @@ setlocale(LC_ALL, "Portuguese");
 
     printf("Digite a nota dos 10 alunos na segunda prova: ");
         for(j=0; j<10; j++){
-            scanf("%f", &mtz[i][j]);                            //Contador das 10 notas na segunda prova
+            scanf("%f", &mtz[i][j]);                            //Leitor das 10 notas na segunda prova
                 if(j==0){
                     pioraluno[1]=1;
                     piornota[1]=mtz[i][j];
@@ -43,7 +43,7 @@ setlocale(LC_ALL, "Portuguese");
 
     printf("Digite a nota dos 10 alunos na terceira prova: ");
         for(j=0; j<10; j++){
-            scanf("%f", &mtz[i][j]);                            //Contador das 10 notas na terceira prova
+            scanf("%f", &mtz[i][j]);                            //Leitor das 10 notas na terceira prova
                 if(j==0){
                     pioraluno[2]=1;
                     piornota[2]=mtz[i][j];
