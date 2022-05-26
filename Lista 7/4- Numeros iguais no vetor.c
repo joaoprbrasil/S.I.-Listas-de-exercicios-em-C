@@ -2,40 +2,42 @@
 #include<locale.h>
 #include<windows.h>
 #define num 10
+#define num2 10
+#define num3 10
 /*
-Faça um programa que leia um vetor de 10 posições e verifique se existem valores
+FaÃ§a um programa que leia um vetor de 10 posiÃ§Ãµes e verifique se existem valores
 iguais e os escreva na tela.
 */
 int main(){
-int v[num], same, i, j;
+int v[num], same, i, j, z[num2], w[num3];
 setlocale(LC_ALL, "Portuguese");
 
-    printf("Escreva 10 números: ");
+    printf("Escreva 10 nÃºmeros: ");
         for(i=0; i<num; i++){
-            scanf("%d", &v[i]);     //Leitor dos 10 números
+            scanf("%d", &v[i]);     //Leitor dos 10 nÃºmeros
+            z[i]=v[i];
+            w[i]=v[i];       
         }
-    for(i=0 ; i<num; i++){
-        for(j=0 ; j<num; j++){
-            if(v[i]==v[j] && i!=j){     //Contador de números iguais
+    for(i=0; i<num; i++){
+        for(j=0; j<num; j++){
+            if(v[i]==w[j] && i!=j){     //Contador de nÃºmeros iguais
                 same++;
+                w[j]=0;
             }
         }
     }
 if(same==0){
-    printf("\nNão existem valores iguais no vetor.");   //Caso não haja números iguais
+    printf("\nNÃ£o existem valores iguais no vetor.");   //Caso nÃ£o haja nÃºmeros iguais
     return 0;
 }
 
-    printf("\nHá %d valores que são iguais e eles são:", same);
-        for(i=0 ; i<num; i++){
-            for(j=0 ; j<num; j++){                  //Printf dos números iguais
-                if(v[i]==v[j] && i!=j){
+    printf("\nHÃ¡ %d valores que sÃ£o iguais e eles sÃ£o:", same);
+        for(i=0; i<num; i++){
+            for(j=0; j<num; j++){                  //Printf dos nÃºmeros iguais
+                if(v[i]==z[j] && i!=j){
                     printf(" %d", v[i]);
+                    z[j]=0;
                 }
             }
         }
-
-
-
-
 }
