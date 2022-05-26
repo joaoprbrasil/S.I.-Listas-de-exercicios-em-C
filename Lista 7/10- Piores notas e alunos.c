@@ -3,10 +3,10 @@
 #include<windows.h>
 /*
 Leia uma matriz 10 x 3 com as notas de 10 alunos em 3 provas. Em seguida,
-escreva o número de alunos cuja pior nota foi na prova 1, o número de alunos cuja
-pior nota foi na prova 2, e o número de alunos cuja pior nota foi na prova 3. Em
-caso de empate das piores notas de um aluno, o critério de desempate é
-arbitrário, mas o aluno deve ser contabilizado apenas uma vez.
+escreva o nÃºmero de alunos cuja pior nota foi na prova 1, o nÃºmero de alunos cuja
+pior nota foi na prova 2, e o nÃºmero de alunos cuja pior nota foi na prova 3. Em
+caso de empate das piores notas de um aluno, o critÃ©rio de desempate Ã©
+arbitrÃ¡rio, mas o aluno deve ser contabilizado apenas uma vez.
 */
 int main(){
 int i=0, j, piornota[3], pioraluno[3];
@@ -50,11 +50,10 @@ setlocale(LC_ALL, "Portuguese");
                 }
                 if(piornota[2]>mtz[i][j]){
                     pioraluno[2]=j+1;
-                    printf("%d", pioraluno[2]);
                     piornota[2]=mtz[i][j];
                 }
         }
     for(i=0; i<3; i++)
-    printf("\nO %d° aluno com a nota %d obteve a pior nota na %dª prova.", pioraluno[i], piornota[i], i+1 );
+    printf("\nO %dÂ° aluno com a nota %d obteve a pior nota na %dÂª prova.", pioraluno[i], piornota[i], i+1 );
 
 }
