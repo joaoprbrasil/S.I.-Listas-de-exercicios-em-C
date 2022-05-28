@@ -1,8 +1,8 @@
 #include<stdio.h>
 #define vetor 5
 /*
-Dado um vetor v = [10, 20, 30, 40, 50], mostre na tela o conteúdo do vetor v em
-sequência.
+Dado um vetor v = [10, 20, 30, 40, 50], mostre na tela o conteÃºdo do vetor v em
+sequÃªncia.
 */
 
 int main(){
