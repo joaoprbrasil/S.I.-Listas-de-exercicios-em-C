@@ -3,22 +3,22 @@
 #include<windows.h>
 #define num 4
 /*
-FaÁa um programa que leia um vetor com 5 inteiros. Exiba um menu de opÁıes, execute a aÁ„o
-escolhida e exiba o resultado. O programa deve ser capaz de solicitar ao usu·rio se deseja
-realizar uma nova operaÁ„o. O programa deve encerrar quando o usu·rio digitar a opÁ„o 0
-(ZERO), portanto, caso o mesmo digite uma opÁ„o inv·lida, o programa n„o deve encerrar.
-Dado o menu de opÁıes, exiba:
+Fa√ßa um programa que leia um vetor com 5 inteiros. Exiba um menu de op√ß√µes, execute a a√ß√£o
+escolhida e exiba o resultado. O programa deve ser capaz de solicitar ao usu√°rio se deseja
+realizar uma nova opera√ß√£o. O programa deve encerrar quando o usu√°rio digitar a op√ß√£o 0
+(ZERO), portanto, caso o mesmo digite uma op√ß√£o inv√°lida, o programa n√£o deve encerrar.
+Dado o menu de op√ß√µes, exiba:
 1. O maior valor
-2. A mÈdia dos valores
-3. As posiÁıes em que existam valores Ìmpares
+2. A m√©dia dos valores
+3. As posi√ß√µes em que existam valores √≠mpares
 4. Os valores dispostos em ordem inversa
-5. Buscar n˙mero: informe um n˙mero e o procure no vetor preenchido, retornando a posiÁ„o e
-o valor desse n˙mero. (retorne -1 caso n„o encontre)
-6. Multiplique os valores pelo inverso de seu Ìndice. (Ex.: se o Ìndice È 2, ent„o o valor deve
+5. Buscar n√∫mero: informe um n√∫mero e o procure no vetor preenchido, retornando a posi√ß√£o e
+o valor desse n√∫mero. (retorne -1 caso n√£o encontre)
+6. Multiplique os valores pelo inverso de seu √≠ndice. (Ex.: se o √≠ndice √© 2, ent√£o o valor deve
 ser multiplicado por -2)
 */
 int main(){
-int v[num], i=0, j=0, k=0, maiorvalor=0, soma=0, opcao=-1, impares=0, valor, inverso;
+int v[num], i=0, k=0, maiorvalor=0, soma=0, opcao=-1, impares=0, valor, inverso;
 float media;
 setlocale(LC_ALL, "Portuguese");
 
@@ -26,128 +26,117 @@ setlocale(LC_ALL, "Portuguese");
     while(i<=num){
     scanf("%d", &v[i]);
         if(v[i]>maiorvalor){
-            maiorvalor = v[i];
+            maiorvalor = v[i];//Maior valor do vetor
         }
         if(v[i]%2!=0){
-            impares++;
+            impares++;        //Contador da exist√™ncia de √≠mpares no vetor
 
         }
-    soma+=v[i];
+    soma+=v[i];               //Soma dos 5 valores
     i++;
     }
-    media = soma / i;
+    media = soma / i;         //Calculo da m√©dia ap√≥s a soma dos 5 valores
 
-int posicao[impares];
-    i=0;
-    while(i<=num){
-        if(v[i]%2!=0){
-            j++;
-            posicao[j]=i+1;
-            }
-        i++;
-    }
-
-
-
-
-    printf("\n\nEscolha uma das opÁıes:");
+    //Tabela de op√ß√µes
+    printf("\n\nEscolha uma das op√ß√µes:");
     printf("\n( 1 ) - Exibir o maior valor digitado");
-    printf("\n( 2 ) - A mÈdia dos valores digitados");
-    printf("\n( 3 ) - As posiÁıes dos valores Ìmpares");
+    printf("\n( 2 ) - A m√©dia dos valores digitados");
+    printf("\n( 3 ) - As posi√ß√µes dos valores √≠mpares");
     printf("\n( 4 ) - Exibir os valores em ordem inversa");
-    printf("\n( 5 ) - Mostrar a posiÁ„o de um n˙mero");
-    printf("\n( 6 ) - M˙ltiplicar os valores pelo inverso de seu Ìncide ");
+    printf("\n( 5 ) - Mostrar a posi√ß√£o de um n√∫mero");
+    printf("\n( 6 ) - M√∫ltiplicar os valores pelo inverso de seu √≠ncide ");
     printf("\n( 0 ) - Para encerrar o programa.\n:");
-    while(opcao!=0){
+
+    while(opcao!=0){          //O while s√≥ encerra quando o usu√°rio digitar 0
         scanf("%d", &opcao);
 
-    switch(opcao){
+    switch(opcao){            //Switch das 6 op√ß√µes
         case 1:
             printf("O maior valor digitado foi %d.\n", maiorvalor);
-            printf("Escolha outra opÁ„o:\n");
+            printf("Escolha outra op√ß√£o:\n");
             break;
 
         case 2:
 
-            printf("A mÈdia dos valores digitados È %.2f.\n", media);
-            printf("Escolha outra opÁ„o:\n");
+            printf("A m√©dia dos valores digitados √© %.2f.\n", media);
+            printf("Escolha outra op√ß√£o:\n");
             break;
 
         case 3:
-            if(impares!=0){
-                printf("As posiÁıes dos valores Ìmpares s„o");
-                for(i=0; i<impares; i++){
-                    printf("; %d", posicao[i+1]);
+            if(impares>0){ //Se impares for maior que 0, ent√£o h√° pelo menos um valor √≠mpar
+                printf("As posi√ß√µes dos valores √≠mpares s√£o");
+                    for(i=0; i<=num; i++){
+                        if(v[i]%2!=0){
+                            printf("; %d", i+1);
+                        }
+                    }
+            }
+                else{     //Caso impares seja igual a zero, ent√£o n√£o h√° valores √≠mpares
+                    printf("N√£o h√° valores √≠mpares no vetor");
                 }
-                printf(".\nEscolha outra opÁ„o:\n");
-            }
-            else{
-                printf("N„o h· valores Ìmpares.\n");
-                printf("Escolha outra opÁ„o:\n");
-            }
+            printf(".\nEscolha outra op√ß√£o:\n");
             break;
 
         case 4:
-            printf("A ordem inversa dos n˙meros È:");
+            printf("A ordem inversa dos n√∫meros √©:");
             for(i=4; i>=0; i--){
                 printf(" %d", v[i]);
             }
-            printf("\nEscolha outra opÁ„o:\n");
+            printf("\nEscolha outra op√ß√£o:\n");
             break;
-
 
         case 5:
             k=0;
-            printf("Escolha um n˙mero para mostrar sua posiÁ„o caso ele exista no vetor: ");
+            printf("Escolha um n√∫mero para mostrar sua posi√ß√£o caso ele exista no vetor: ");
             scanf("%d", &valor);
-            for(i=0; i<num; i++){
+            for(i=0; i<=num; i++){
                 if(v[i]==valor){
-                    k++; // k >=1 h· este valor no vetor
-                }
+                    k++; // k >=1 h√° este valor no vetor
+                }        // Caso k = 0; ent√£o o valor digitado n√£o existe no vetor
             }
-            if(k==1){
-                printf("A posiÁ„o deste valor È" );
+            if(k==1){   //Caso haja apenas um n√∫mero igual ao valor digitado
+                printf("A posi√ß√£o deste valor √©" );
                 for(i=0; i<=num; i++){
                     if(valor==v[i]){
                         printf(" %d.", i+1);
                     }
                 }
-                printf("\nO valor deste n˙mero È: %d", valor);
+                printf("\nO valor deste n√∫mero √©: %d", valor);
 
             }
-            if(k==0){
+            if(k==0){   //Caso n√£o haja o valor digitado no vetor
                 k=-1;
-                printf("N„o h· este valor no vetor, ent„o a posiÁ„o deste valor È %d.", k);
+                printf("N√£o h√° este valor no vetor, ent√£o a posi√ß√£o deste valor √© %d.", k);
             }
-            if(k>1){
-                printf("H· %d valores no vetor igual ao n˙mero digitado.", k);
-                printf("\nAs posiÁıes desses valores s„o");
+            if(k>1){    //Caso haja mais de um n√∫mero igual ao valor digitado
+                printf("H√° %d valores no vetor igual ao n√∫mero digitado.", k);
+                printf("\nAs posi√ß√µes desses valores s√£o");
                 for(i=0; i<=num; i++){
                     if(valor==v[i]){
                         printf("; %d", i+1);
                     }
                 }
-                printf(".\nO valor deste n˙mero È: %d", valor);
+                printf(".\nO valor deste n√∫mero √©: %d", valor);
             }
-            printf("\nEscolha outra opÁ„o:\n");
+            printf("\nEscolha outra op√ß√£o:\n");
             break;
 
-
         case 6:
-            printf("Os valores do vetores multiplicados pelo inverso do seu Ìndice:");
+            printf("Os valores do vetores multiplicados pelo inverso do seu √≠ndice s√£o:");
             for(i=0; i<=num; i++){
                     inverso = v[i] * (-v[i]);
                 printf(" %d", inverso);
             }
+            printf("\nEscolha outra op√ß√£o:\n");
             break;
-
 
         case 0:
             printf("O programa foi encerrado.");
             break;
 
         default:
-            printf("\nEsta n„o È uma opÁ„o v·lida.\n");
+            printf("\nEsta n√£o √© uma op√ß√£o v√°lida.\n");
+            printf("Escolha outra op√ß√£o:\n");
             break;
         }
     }
