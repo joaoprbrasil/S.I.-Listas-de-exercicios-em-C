@@ -64,10 +64,10 @@ setlocale(LC_ALL, "Portuguese");
 
         case 3:
             if(impares>0){ //Se impares for maior que 0, então há pelo menos um valor ímpar
-                printf("As posições dos valores ímpares são");
+                printf("As posições dos valores ímpares no vetor são");
                     for(i=0; i<=num; i++){
                         if(v[i]%2!=0){
-                            printf("; %d", i+1);
+                            printf("; %d", i);
                         }
                     }
             }
@@ -95,10 +95,10 @@ setlocale(LC_ALL, "Portuguese");
                 }        // Caso k = 0; então o valor digitado não existe no vetor
             }
             if(k==1){   //Caso haja apenas um número igual ao valor digitado
-                printf("A posição deste valor é" );
+                printf("A posição deste valor no vetor é" );
                 for(i=0; i<=num; i++){
                     if(valor==v[i]){
-                        printf(" %d.", i+1);
+                        printf(" %d.", i);
                     }
                 }
                 printf("\nO valor deste número é: %d", valor);
@@ -113,7 +113,7 @@ setlocale(LC_ALL, "Portuguese");
                 printf("\nAs posições desses valores são");
                 for(i=0; i<=num; i++){
                     if(valor==v[i]){
-                        printf("; %d", i+1);
+                        printf("; %d", i);
                     }
                 }
                 printf(".\nO valor deste número é: %d", valor);
@@ -124,7 +124,7 @@ setlocale(LC_ALL, "Portuguese");
         case 6:
             printf("Os valores do vetores multiplicados pelo inverso do seu índice são:");
             for(i=0; i<=num; i++){
-                    inverso = v[i] * (-v[i]);
+                    inverso = v[i] * (-i);
                 printf(" %d", inverso);
             }
             printf("\nEscolha outra opção:\n");
