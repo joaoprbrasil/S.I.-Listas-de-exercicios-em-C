@@ -2,15 +2,14 @@
 #include<locale.h>
 #include<windows.h>
 /*
-Questão 1) Faça um programa que leia a temperatura de uma cidade em uma semana. O
-programa deverá conter:
+QuestÃ£o 1) FaÃ§a um programa que leia a temperatura de uma cidade em uma semana. O
 O programa deve conter:
 - Inserir temperaturas
 - Exibir temperaturas
 - Limpar registro de temperaturas:
 - Exibir temperaturas em Fahrenheit
-- Exibir a média das temperaturas da semana
-- O programa deverá encerrar ao digitar a zero.
+- Exibir a mÃ©dia das temperaturas da semana
+- O programa deverÃ¡ encerrar ao digitar a zero.
 */
 int main(){
 int escolha=-1, i, k=0;
@@ -19,15 +18,15 @@ setlocale(LC_ALL, "Portuguese");
 
 
     while(escolha!=0){
-    printf("\n============Medidor============\n1 - Inserir temperaturas C°\n2 - Exibir temperaturas\n3 - Limpar temperaturas\n4 - Exibir temperaturas em F°\n5 - Média das temperaturas\n0 - Encerrar o programa\n===============================");
-    printf("\nEscolha uma opção >");
+    printf("\n============Medidor============\n1 - Inserir temperaturas CÂ°\n2 - Exibir temperaturas\n3 - Limpar temperaturas\n4 - Exibir temperaturas em FÂ°\n5 - MÃ©dia das temperaturas\n0 - Encerrar o programa\n===============================");
+    printf("\nEscolha uma opÃ§Ã£o >");
     scanf("%d", &escolha);
 
         if(escolha == 1){ //Inserir temperaturas
             system("cls");
             printf("Digite as 7 temperaturas da semana: ");
                 for(i=0; i<7; i++){
-                    printf("\n%d° temperatura:", i+1);
+                    printf("\n%dÂ° temperatura:", i+1);
                     scanf("%f", &C[i]);
                     soma+=C[i];
                 }
@@ -38,13 +37,13 @@ setlocale(LC_ALL, "Portuguese");
         if(escolha == 2){ //Exibir temperaturas
             system("cls");
             if(k>0){
-                printf("As temperaturas são:");
+                printf("As temperaturas sÃ£o:");
                 for(i=0; i<=6; i++){
-                    printf("\n %.1f C°", C[i]);
+                    printf("\n %.1f CÂ°", C[i]);
                 }
             }
-                else{   //Caso o usuário não inserir nenhuma temperatura
-                    printf("Você deve primeiro inserir as temperaturas.");
+                else{   //Caso o usuÃ¡rio nÃ£o inserir nenhuma temperatura
+                    printf("VocÃª deve primeiro inserir as temperaturas.");
                 }
         }
 
@@ -59,18 +58,18 @@ setlocale(LC_ALL, "Portuguese");
             printf("As temperaturas foram limpadas.");
         }
 
-        if(escolha == 4){ //Exibir temperaturas em F°
+        if(escolha == 4){ //Exibir temperaturas em FÂ°
             system("cls");
             if(k>0){
-                printf("As temperaturas convertidas em F° são:");
+                printf("As temperaturas convertidas em FÂ° sÃ£o:");
                 for(i=0; i<=6; i++){
                     F[i]=(C[i] * 9/5) + 32;
-                    //(°C × 9/5) + 32
-                    printf("\n%.1f F°", F[i]);
+                    //(Â°C Ã— 9/5) + 32
+                    printf("\n%.1f FÂ°", F[i]);
                 }
             }
                 else{
-                    printf("Você deve primeiro inserir as temperaturas.");
+                    printf("VocÃª deve primeiro inserir as temperaturas.");
                 }
 
         }
@@ -78,10 +77,10 @@ setlocale(LC_ALL, "Portuguese");
         if(escolha == 5){
             system("cls");
             if(k>0){
-                printf("A média das temperaturas é %.2f C°", media);
+                printf("A mÃ©dia das temperaturas Ã© %.2f CÂ°", media);
             }
                 else{
-                    printf("Você deve primeiro inserir as temperaturas.");
+                    printf("VocÃª deve primeiro inserir as temperaturas.");
                 }
         }
 
