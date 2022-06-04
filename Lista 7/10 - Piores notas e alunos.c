@@ -18,19 +18,19 @@ setlocale(LC_ALL, "Portuguese");
         system("cls");
         printf("Digite a nota dos 10 alunos na %d° prova\n:", j+1);
             for(i=0; i<10; i++){
-                scanf("%f", &mtz[i][j]);                            //Leitor das 10 notas na primeira prova
+                scanf("%f", &mtz[i][j]);            //Leitor das 10 notas na primeira prova
                     if(i==0){
                         pioraluno[j]=i+1;
                         piornota[j]=mtz[i][j];
                     }
                     if(mtz[i][j]<piornota[j]){
-                        pioraluno[j]=i+1;                           //Vetor da pior nota e do pior aluno da primeira prova
+                        pioraluno[j]=i+1;           //Vetor da pior nota e do pior aluno da prova
                         piornota[j]=mtz[i][j];
                     }
             }
     }
     system("cls");
-    for(j=0; j<3; j++)                                          //Printf do pior aluno, sua pior nota da turma e em qual prova
+    for(j=0; j<3; j++)                             //Printf do pior aluno, sua pior nota da turma e em qual prova
         printf("O %d° aluno com a nota %d obteve a pior nota na %dª prova.", pioraluno[j], piornota[j], j+1 );
 }
 
