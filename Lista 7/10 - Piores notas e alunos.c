@@ -31,6 +31,6 @@ setlocale(LC_ALL, "Portuguese");
     }
     system("cls");
     for(j=0; j<3; j++)                             //Printf do pior aluno, sua pior nota da turma e em qual prova
-        printf("O %d° aluno com a nota %d obteve a pior nota na %dª prova.", pioraluno[j], piornota[j], j+1 );
+        printf("\nO %d° aluno com a nota %d obteve a pior nota na %dª prova.", pioraluno[j], piornota[j], j+1 );
 }
 
