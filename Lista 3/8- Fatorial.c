@@ -1,17 +1,17 @@
 #include<stdio.h>
 #include<locale.h>
 /*
-8. Faça um algoritmo que lê um valor N inteiro e positivo e que calcula e escreve o
+8. FaÃ§a um algoritmo que lÃª um valor N inteiro e positivo e que calcula e escreve o
 fatorial de N (N!).
 */
 main(){
 int num, result=1, i;
 setlocale(LC_ALL, "Portuguese");
 
-    printf("Insira um número para fatorar: ");
+    printf("Insira um nÃºmero para exibir o fatorial dele: ");
 	scanf("%d", &num);
 	for(i = 1; i <= num; i++){
 		result *= i;
 	}
-	printf("O fatorial de %d é: %d", num, result);
+	printf("O fatorial de %d Ã©: %d", num, result);
 }
