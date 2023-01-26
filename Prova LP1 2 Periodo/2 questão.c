@@ -6,6 +6,7 @@ struct aluno para armazenar o nome e email dos alunos.
 */
 
 #include <stdio.h>
+#include <string.h>
 
 int main(void){
 
